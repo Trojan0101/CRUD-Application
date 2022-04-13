@@ -4,4 +4,7 @@ This repo is contains CRUD application created using Java.
 
 ## Technology Stack
 
--Language: Java
+- Language: Java
+- MVC Framework: Spring Boot
+- ORM: Hibernate
+- Security: Spring Security
