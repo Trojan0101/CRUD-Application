@@ -1,6 +1,6 @@
 # CRUD-Application
 
-This repo is contains CRUD application created using Java.
+Basic CRUD application created for learning.
 
 ## Technology Stack
 
