@@ -1,11 +1,13 @@
 package com.trojan.SpringBootTutorial.service;
 
 import com.trojan.SpringBootTutorial.entity.Department;
+import com.trojan.SpringBootTutorial.error.DepartmentNotFoundException;
 import com.trojan.SpringBootTutorial.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService{
@@ -24,8 +26,13 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Department getDepartmentById(long departmentId) {
-        return departmentRepository.findById(departmentId).get();
+    public Department getDepartmentById(long departmentId) throws DepartmentNotFoundException {
+        Optional<Department> department = departmentRepository.findById(departmentId);
+        if (department.isPresent()) {
+            return department.get();
+        } else {
+            throw new DepartmentNotFoundException("Department not found!");
+        }
     }
 
     @Override
