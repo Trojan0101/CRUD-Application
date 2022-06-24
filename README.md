@@ -1,6 +1,6 @@
 # CRUD-Application
 
-Basic CRUD application created for learning.
+CRUD application using Java.
 
 ## Technology Stack
 
